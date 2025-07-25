@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+        .card-hover {
+            transition: transform 0.4s ease, background 0.4s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        /* 로딩 화면 스타일 */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e1b4b, #7f5af0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: opacity 1s ease;
+        }
+
+        #loading-screen h1 {
+            margin-bottom: 24px;
+            letter-spacing: 0.15em;
+            text-align: center;
+        }
+
+        /* 애니메이션 점 3개 */
+        .dots {
+            margin-top: 20px;
+            display: flex;
+            gap: 18px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+
+            40% {
+                transform: translateY(-20px);
+                opacity: 1;
+            }
+        }
+
+        /* 메인 콘텐츠 숨김 & 전환 효과 */
+        #main-content {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s ease;
+        }
+
+        #main-content.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
