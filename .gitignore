@@ -1,6 +1,9 @@
 .metadata/
-/target/
+/movieRanking/target/
 /movieRanking/.settings/
 /movieRanking/.project
 /movieRanking/pom.xml
 /movieRanking/.classpath
+
+/movieRanking/.classpath
+
